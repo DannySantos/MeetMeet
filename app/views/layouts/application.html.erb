@@ -2,18 +2,32 @@
 <html>
 <head>
   <title>MeetMeet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= link_to "Register", new_user_registration_path %>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="container-fluid">
+    <div class="topbar row">
+      <div class="col-sm-1">
+        <%= link_to "Home", root_path, class: "home-button" %>
+      </div>
+      
+      <div class="col-sm-2 col-sm-offset-9 text-right">
+        <%= link_to "Register", new_user_registration_path, class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
 
   <%= yield %>
-
+  
+  <div class="center-translucent col-sm-6 col-sm-offset-3 text-center">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: image-url("background_full_register.jpeg");
+  background-size: cover;
+}
