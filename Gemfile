@@ -25,6 +25,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'launchy'
   gem 'rspec-rails', '~> 3.4'
+  gem 'foreman'
 end
 
 group :development do
