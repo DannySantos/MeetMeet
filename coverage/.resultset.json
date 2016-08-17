@@ -549,6 +549,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/dannysantos/projects/MeetMeet/app/models/profile.rb": [
@@ -577,7 +578,7 @@
         null
       ]
     },
-    "timestamp": 1471434383
+    "timestamp": 1471435961
   },
   "Cucumber Features": {
     "coverage": {
@@ -1268,6 +1269,6 @@
         null
       ]
     },
-    "timestamp": 1471434393
+    "timestamp": 1471435971
   }
 }
