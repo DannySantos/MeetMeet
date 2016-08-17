@@ -1,0 +1,32 @@
+.front-content-wrapper
+  .front-content
+    %h1 MeetMeet
+    .search-box
+      = form_tag search_requests_path, method: :get, class: "nl-form", id: "nl-form" do
+
+        I want to
+        .nl-field
+          %a.field-toggle select activity
+          %ul
+            %li select activity...
+            - @activities.each_with_index do |activity, index|
+              %li.select-option(data-id="#{index}")= activity[0]
+          = select_tag("search[activity_id]", options_for_select(@activities), class: "inline-select", id: "activities-select")
+
+        in
+        .nl-field
+          %a.field-toggle enter town/city
+          %ul
+            %li= text_field_tag "search[town_city]", nil, placeholder: "enter town/city", class: "inline-text", id: "town-city-input"
+
+        ,
+        .nl-field
+          %a.field-toggle enter country
+          %ul
+            %li= text_field_tag "search[country]", nil, placeholder: "enter country", class: "inline-text", id: "country-input"
+
+        .clearfix
+
+        = submit_tag "Find People!", class: "inline-button"
+
+        .nl-overlay

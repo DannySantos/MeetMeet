@@ -1,0 +1,12 @@
+.content-wrapper
+  .col-sm-4.col-sm-offset-4
+    %header
+      %h2 Search results:
+
+      .result-count
+        Found 
+        %span= @requests.meta["total"]
+        results
+
+    .search-results
+      = render @requests

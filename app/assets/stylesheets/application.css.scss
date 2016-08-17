@@ -16,9 +16,23 @@
 
 html, body {
   height: 100%;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
-  background-image: image-url("background_full_register.jpeg");
   background-size: cover;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.background-registration {
+  background-image: image-url("background_full_register.jpeg");
+}
+
+.background-log-in {
+  background-image: image-url("background_full_log_in.jpg");
 }

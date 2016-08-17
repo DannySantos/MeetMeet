@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>MeetMeet</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= @background_image %>">
   <div class="container-fluid">
     <div class="topbar row">
       <div class="col-sm-1">
@@ -16,9 +17,10 @@
       
       <div class="col-sm-2 col-sm-offset-9 text-right">
         <% if current_user %>
-          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-warning", method: :delete %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Register", new_user_registration_path, class: "btn btn-info" %>
+          <%= link_to "Register", new_user_registration_path %>
+          <%= link_to "Log In", new_user_session_path %>
         <% end %>
       </div>
     </div>
@@ -26,10 +28,8 @@
 
   <%= yield %>
   
-  <div class="center-translucent col-sm-6 col-sm-offset-3 text-center">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
+  <p class="notice center-translucent col-sm-6 col-sm-offset-3 text-center"><%= notice %></p>
+  <p class="alert center-translucent col-sm-6 col-sm-offset-3 text-center"><%= alert %></p>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
