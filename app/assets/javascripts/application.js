@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require jquery.turbolinks
+//= require jquery_ujs
 //= require_tree .
+//= require turbolinks
 
 $(document).ready(function() {
   $('.notice:empty').hide();
@@ -22,4 +22,3 @@ $(document).ready(function() {
   $(".notice").delay(2000).fadeOut();
   $(".alert").delay(2000).fadeOut();
 });
-  

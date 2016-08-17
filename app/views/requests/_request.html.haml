@@ -1,1 +1,2 @@
-%h3= request.profile.username
+%a{href: user_path(request.profile.id)}
+  %h3= request.profile.username

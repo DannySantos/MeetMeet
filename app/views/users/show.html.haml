@@ -1,0 +1,7 @@
+.content-wrapper
+  .col-sm-8.col-sm-offset-2.profile
+    %h2= @profile.username
+    = image_tag @profile.image_url || "profile-placeholder"
+    %h3= "#{@profile.username} wants to:"
+    - @requests.each do |request|
+      %p= "#{request.activity.name} in #{request.town_city}, #{request.country}"
