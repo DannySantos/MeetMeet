@@ -1,5 +1,13 @@
 .topbar {
-  height: 40px;
-  line-height: 40px;
-  background-color: #333;
+  height: 30px;
+  line-height: 30px;
+  background-color: #095d57;
+  
+  a {
+    color: #f2ede3;
+  }
+  
+  a:last-child {
+    margin-left: 15px;
+  }
 }
