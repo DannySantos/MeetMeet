@@ -12,3 +12,10 @@ Feature: Profile
       And they search by activity and location
     When They click on another user's profile
     Then They see the user's profile details
+    
+  Scenario: A user adds their location to their profile
+    Given a User has previously registered
+      And they have signed in previously
+      And they are on their edit profile page
+    When they fill in the form with location details
+    Then their profile should have their location

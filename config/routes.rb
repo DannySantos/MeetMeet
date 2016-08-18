@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions' }
+  devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', confirmations: 'confirmations' }
   root to: "application#index"
   resources :requests, only: [:show] do
     collection do
@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show]
+  resources :profiles, only: [:edit, :show, :update]
 end
