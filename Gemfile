@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails'
 gem 'devise'
 gem 'thinking-sphinx', '~> 3.2.0'
+gem 'flying-sphinx',   '1.2.0'
 gem 'mysql2'
 
 group :test do
