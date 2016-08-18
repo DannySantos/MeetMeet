@@ -16,6 +16,7 @@ gem 'devise'
 gem 'thinking-sphinx', '~> 3.2.0'
 gem 'flying-sphinx',   '1.2.0'
 gem 'mysql2'
+gem 'geocoder'
 
 group :test do
   gem 'faker'
