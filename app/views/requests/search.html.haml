@@ -1,5 +1,6 @@
 .content-wrapper
-  .col-sm-4.col-sm-offset-4
+  #map.col-sm-9
+  .col-sm-3.search-results
     %header
       %h2 Search results:
 
@@ -8,5 +9,4 @@
         %span= @requests.meta["total"]
         results
 
-    .search-results
-      = render @requests
+    #search-results
