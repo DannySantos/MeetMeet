@@ -3,6 +3,9 @@
     %h2 Edit Profile
     = form_for @profile do |f|
       %fieldset
+        %h3 Biography
+        = f.text_area :biography, class: "form-control"
+      %fieldset
         %h3 Location
         = f.text_field :town_city, class: "form-control"
         = f.text_field :country, class: "form-control"

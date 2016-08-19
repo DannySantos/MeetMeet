@@ -18,6 +18,7 @@ gem 'flying-sphinx',   '1.2.0'
 gem 'mysql2'
 gem 'geocoder'
 
+
 group :test do
   gem 'faker'
   gem 'cucumber-rails', require: false
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails', '~> 3.4'
   gem 'foreman'
+  gem 'letter_opener'
 end
 
 group :development do
