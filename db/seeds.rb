@@ -59,3 +59,10 @@
   town_city: "Jaipur",
   country: "India"
 })
+
+@request_5 = Request.find_or_create_by({
+  profile_id: @profile_1.id,
+  activity_id: @dancing.id,
+  town_city: "Arras",
+  country: "France"
+})
