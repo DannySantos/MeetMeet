@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   
   has_one :profile
   
-  after_save(on: :create) do
-    Profile.create({user_id: self.id})
+  after_create do
+    profile = Profile.create(user_id: self.id)
+    self.update(profile_id: profile.id)
   end
 end
