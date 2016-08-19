@@ -3,9 +3,15 @@
 }
 
 .search-results {
+  height: 100%;
+  overflow: scroll;
   text-align: left;
   
   a {
     color: #fff;
+  }
+  
+  h3 {
+    display: inline;
   }
 }

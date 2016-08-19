@@ -1,3 +1,4 @@
+require 'faker'
 
 @profile_1 = Profile.find_or_create_by({
   username: "profile_1",
@@ -65,4 +66,4 @@
   activity_id: @dancing.id,
   town_city: "Arras",
   country: "France"
-})
+  })

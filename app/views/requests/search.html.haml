@@ -1,12 +1,21 @@
+%script
+  var searchActivity = "#{@activity}"
+  var searchActivityId = #{@activity_id}
+  var searchTownCity = "#{@town_city}"
+  var searchCountry = "#{@country}"
+  var searchMapLatLng = #{@map_lat_lng}
+  var searchMapLat = #{@map_lat}
+  var searchMapLng = #{@map_lng}
 .content-wrapper
   #map.col-sm-9
   .col-sm-3.search-results
     %header
-      %h2 Search results:
+      %h2
+        "Search results for #{@activity} in #{@town_city}, #{@country}"
 
       .result-count
         Found 
-        %span= @requests.meta["total"]
+        %span#resultsTotal 0
         results
-
+        
     #search-results

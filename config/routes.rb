@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :requests, only: [:show, :index] do
     collection do
       get :search
-      get :get_requests_json
     end
   end
   
