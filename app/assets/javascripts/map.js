@@ -31,7 +31,7 @@ function initMap() {
 loadRequests = function() {
   $.ajax({
     type: 'GET',
-    url: "/requests/get_requests_json",
+    url: "/requests/search",
     contentType: "application/json",
     dataType: "json",
     success: function(requests) {
