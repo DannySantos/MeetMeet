@@ -21,13 +21,9 @@ class RequestsController < ApplicationController
       @requests = Request.near([map_center_lat, map_center_lng], distance).where(activity_id: params[:search][:activity_id])
     end
     
-    
     respond_to do |format|
-      format.json do
-        render json: @requests 
-      end
-      
       format.html
+      format.json { render json: @requests }
     end
   end
 end
