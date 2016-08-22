@@ -1,5 +1,3 @@
-require 'faker'
-
 User.destroy_all
 
 @user_1 = User.create!(
