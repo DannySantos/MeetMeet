@@ -1,10 +1,22 @@
 .content-wrapper
   .col-sm-8.col-sm-offset-2.profile
     %h2= @profile.username
-    = image_tag @profile.image_url || "profile-placeholder"
+    = image_tag @profile.image_url || "profile_placeholder"
     %p= "Location: #{@profile.town_city}, #{@profile.country}"
     %p= "#{@profile.biography}"
     %h3= "#{@profile.username} wants to:"
     - @requests.each do |request|
       %p= "#{request.activity.name} in #{request.town_city}, #{request.country}"
     = link_to "Edit Profile", edit_profile_path(@profile.id)
+    .col-sm-10.col-sm-offset-1.write-review
+      %h3.text-left Write a Review:
+      = form_for @review, url: reviews_path, method: "POST", remote: true do |f|
+        = hidden_field_tag "review[reviewer_id]", current_user.profile_id
+        = hidden_field_tag "review[reviewed_id]", @profile.id
+        = f.label :rating, "How would you rate your experience with this user?"
+        = f.select :rating, options_for_select(@rating_options), {}, {class: "form-control"}
+        = f.text_field :title, placeholder: "Summarize your review in a few words", class: "form-control"
+        = f.text_area :body, placeholder: "Tell people about your experience with this user", class: "form-control"
+        = f.submit "Submit Review", class: "form-control btn btn-info"
+    #reviews
+      = render @reviews

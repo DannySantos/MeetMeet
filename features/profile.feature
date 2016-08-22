@@ -4,7 +4,6 @@ Feature: Profile
     Given a User has previously registered
       And they have signed in previously
   
-  
   @sphinx
   Scenario: A user views another user's profile from a search
     Given there are some profiles
@@ -21,7 +20,6 @@ Feature: Profile
     When they fill in the form with location details
     Then their profile should have their location
     
-  @wip
   Scenario: A user adds their biography to their profile
     Given they are on their edit profile page
     When they fill in the form with biography details

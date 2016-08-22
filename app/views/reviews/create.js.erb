@@ -1,0 +1,3 @@
+$('#reviews').append("<%= escape_javascript(render partial: 'reviews/review', locals: { review: @review }) %>");
+
+$('#review_body').val("");

@@ -1,0 +1,11 @@
+.review-container
+  .col-sm-2.col-sm-offset-1
+    = image_tag review.reviewer.profile.image_url || "profile_placeholder", class: "reviewer-profile"
+  .review-body.col-sm-8
+    %h3= review.title
+    - review.rating.times do
+      = image_tag "star-rating-yes", class: "review-stars"
+    - (5 - review.rating).times do
+      = image_tag "star-rating-no", class: "review-stars"
+    %p= review.body
+  .clearfix

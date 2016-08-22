@@ -11,6 +11,10 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @requests = @profile.requests
+    @review = Review.new
+    @rating_options = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5]]
+    @reviews = @profile.user.reviews
+#    @reviews = Review.search(conditions: {reviewed_id: @profile.id})
   end
   
   private

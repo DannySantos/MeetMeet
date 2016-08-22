@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show]
+  resources :reviews, only: [:create]
   resources :profiles, only: [:edit, :show, :update]
 end
