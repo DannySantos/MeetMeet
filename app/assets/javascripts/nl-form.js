@@ -13,10 +13,14 @@ $(document).ready(function() {
   activitiesSelect.hide();
   
   $('.field-toggle').click(toggleInput);
+  $('.field-toggle').focus(toggleInput);
   $('.select-option').click(selectOption);
-  $('.inline-text').keyup(textSelect)
+  $('.inline-text').keyup(textSelect);
+  $('.inline-text').keydown(textSelect);
+  $('.nl-next').click(textSelect);
   
   function toggleInput(event) {
+    event.preventDefault();
     $($(event.currentTarget).parent().children()[1]).show();
     $('.nl-overlay').attr("style", "opacity:1; display:block;");
     $($(event.currentTarget).next().children()[0]).children()[0].focus();
@@ -31,11 +35,19 @@ $(document).ready(function() {
   };
   
   function textSelect(event) {
-    if(event.keyCode == 13) {
+    if(event.type == "keydown" && (event.keyCode == 13 || event.keyCode == 9)) {
       var current = event.currentTarget;
       $(current).parent().next().val($(current).val());
       $(current).parent().hide();
       $(current).parent().parent().prev().html($(current).val())
+      $('.nl-overlay').attr("style", "opacity:0; display:none;");
+    }
+    
+    if(event.type == "click") {
+      var current = event.currentTarget;
+      $(current).parent().parent().prev().val($(current).prev().val());
+      $(current).parent().hide();
+      $(current).parent().parent().prev().html($(current).prev().val())
       $('.nl-overlay').attr("style", "opacity:0; display:none;");
     }
   };

@@ -1,6 +1,5 @@
 Feature: Reviews
 
-  @wip
   Scenario: A user leaves a review on another user's profile
     Given a User has previously registered
       And they have signed in previously

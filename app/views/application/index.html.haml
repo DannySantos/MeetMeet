@@ -15,15 +15,19 @@
 
         in
         .nl-field
-          %a.field-toggle enter town/city
-          %ul
-            %li= text_field_tag "search[town_city]", nil, placeholder: "enter town/city", class: "inline-text", id: "town-city-input"
+          %a.field-toggle#town_city{href: ""} enter town/city
+          %ul.text-input
+            %li
+              = text_field_tag "search[town_city]", nil, placeholder: "enter town/city", class: "inline-text", id: "town-city-input"
+              .nl-next >
 
         ,
         .nl-field
-          %a.field-toggle enter country
-          %ul
-            %li= text_field_tag "search[country]", nil, placeholder: "enter country", class: "inline-text", id: "country-input"
+          %a.field-toggle#country{href: ""} enter country
+          %ul.text-input
+            %li
+              = text_field_tag "search[country]", nil, placeholder: "enter country", class: "inline-text", id: "country-input"
+              .nl-next >
 
         .clearfix
 

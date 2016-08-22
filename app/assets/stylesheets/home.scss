@@ -33,6 +33,11 @@
     outline: none;
   }
   
+  .inline-text {
+    max-width: 300px;
+    margin: 5px 10px;
+  }
+  
   ::-webkit-input-placeholder {
     color: #f2ede3;
   }
@@ -84,11 +89,22 @@
     font-size: 0.8em;
     min-width: 300px;
     z-index: 10000;
+    min-width: 387px;
+  }
+  
+  ul.text-input li {
+    padding: 0;
+    display: inline;
   }
 
   .nl-field ul li {
     padding: 5px 10px;
     cursor: not-allowed;
+  }
+
+  .nl-field ul.text-input li {
+    padding: 5px 10px;
+    cursor: inherit;
   }
 
   .nl-field ul li.select-option {
@@ -97,6 +113,23 @@
 
   .nl-field ul li:hover {
     background-color: #4eb1a9;
+  }
+
+  .nl-field ul.text-input li:hover {
+    background-color: transparent;
+  }
+  
+  .nl-next {
+    background-color: #4eb1a9;
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .nl-next:hover {
+    background-color: #388881;
   }
   
   .nl-overlay {

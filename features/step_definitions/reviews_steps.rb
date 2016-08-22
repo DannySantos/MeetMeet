@@ -1,5 +1,5 @@
 Given(/^they are on another user's profile$/) do
-  visit profile_path @profile_1.id
+  visit profile_path @user_1.profile_id
 end
 
 When(/^they fill in the review form$/) do

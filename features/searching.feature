@@ -1,6 +1,6 @@
 Feature: Searching
   
-  @sphinx
+  @sphinx  @javascript
   Scenario: A visitor searches by activity and location
     Given there are some profiles
       And there are some activities

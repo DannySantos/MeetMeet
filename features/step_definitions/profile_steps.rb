@@ -1,5 +1,5 @@
 When(/^They click on another user's profile$/) do
-  click_link "profile_1"
+  click_link "1LondonUK"
 end
 
 Given(/^they are on their edit profile page$/) do

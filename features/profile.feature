@@ -4,7 +4,7 @@ Feature: Profile
     Given a User has previously registered
       And they have signed in previously
   
-  @sphinx
+  @sphinx @javascript
   Scenario: A user views another user's profile from a search
     Given there are some profiles
       And there are some activities
