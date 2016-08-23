@@ -14,6 +14,6 @@ Feature: Users
   Scenario: A User signs out
     Given a User has previously registered
       And they have signed in previously
-      And they are on the home page
+      And they are on the homepage
     When they sign out
     Then they should see a farewell message

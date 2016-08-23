@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     @review = Review.new
     @rating_options = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5]]
     @reviews = @profile.user.reviews
-#    @reviews = Review.search(conditions: {reviewed_id: @profile.id})
+    @sent = true if params[:sent] == "true"
   end
   
   private

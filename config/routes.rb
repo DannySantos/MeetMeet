@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :reviews, only: [:create]
   resources :profiles, only: [:edit, :show, :update]
+  resources :messages, only: [:new, :create]
 end

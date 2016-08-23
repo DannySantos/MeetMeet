@@ -1,7 +1,3 @@
-When(/^They click on another user's profile$/) do
-  click_link "1LondonUK"
-end
-
 Given(/^they are on their edit profile page$/) do
   visit edit_profile_path(@user.profile.id)
 end

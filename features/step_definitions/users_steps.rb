@@ -3,28 +3,8 @@ Given(/^they are on the registration page$/) do
   click_on "Register"
 end
 
-Given(/^a User has previously registered$/) do
-  @user = User.create!(
-    {
-      email: "test@test.com",
-      password: "password",
-      password_confirmation: "password",
-      confirmed_at: Date.new
-    }
-  )
-end
-
 Given(/^they are on the log in page$/) do
   visit new_user_session_path
-end
-
-Given(/^they have signed in previously$/) do
-  step "they are on the log in page"
-  step "they fill out the log in form with valid details"
-end
-
-Given(/^they are on the home page$/) do
-  visit root_path
 end
 
 When(/^they sign out$/) do
