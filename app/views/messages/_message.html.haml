@@ -1,0 +1,5 @@
+.message-container{class: "#{"self" if message.sender_id == current_user.id}"}
+  .thumbnail-container{style: "background-image: url(#{message.sender.profile.image_url})"}
+  .info-container
+    %h3= message.sender.profile.username
+    %p= message.body
