@@ -1,9 +1,36 @@
 .profile {
   background-color: #fff;
   color: #095d57;
+  text-align: left;
+
+  p {
+    font-size: 0.4em;
+    color: #333;
+  }
   
-  img {
-    width: 40%;
+  .profile-info-wrapper {
+    border: 14px solid #eaeaea;
+    margin-top: 20px;
+  }
+  
+  .profile-requests {
+    text-align: center;
+    font-size: 1.4em;
+  }
+  
+  .message-button {
+    display: inline;
+    display: inline;
+  }
+  
+  .profile-sidebar {
+    text-align: left;
+    color: #333;
+    
+    img {
+      width: 100%;
+      margin-top: 15px;
+    }
   }
   
   .write-review {

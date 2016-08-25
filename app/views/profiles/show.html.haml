@@ -3,21 +3,28 @@
   
 .content-wrapper
   .col-sm-8.col-sm-offset-2.profile
-    %h2= @profile.username
-    = image_tag @profile.image_url || "profile_placeholder"
-    %p= "Location: #{@profile.town_city}, #{@profile.country}"
-    %p= "#{@profile.biography}"
+    .col-sm-10.col-sm-offset-1.profile-info-wrapper
+      .col-sm-4.profile-sidebar
+        = image_tag @profile.image_url || "profile_placeholder"
+        - if current_user && @profile.user_id == current_user.id
+          = link_to "Edit Profile", edit_profile_path(@profile.id), class: "btn btn-info form-control"
+
+        - unless current_user && @profile.user_id == current_user.id
+          = button_to "send_message", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-default form-control"
+
+      .col-sm-8
+        %h2= @profile.username
+        %p= "Location: #{@profile.town_city}, #{@profile.country}"
+        %p= @profile.biography.html_safe if @profile.biography
+          
+      .clearfix
     
-    %h3= "#{@profile.username} wants to:"
-    - @requests.each do |request|
-      %p= "#{request.activity.name} in #{request.town_city}, #{request.country}"
+    .profile-requests
+      %h3= "#{@profile.username} wants to:"
+      - @requests.each do |request|
+        %p= "#{request.activity.name} in #{request.town_city}, #{request.country}"
+      = button_to "Send a message and MeetMeet #{@profile.username}!", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-default message-button"
       
-    - if current_user && @profile.user_id == current_user.id
-      = link_to "Edit Profile", edit_profile_path(@profile.id)
-      
-    - unless current_user && @profile.user_id == current_user.id
-      = button_to "send_message", new_message_path, method: :get, params: { receiver_id: @profile.user.id}
-    
     - if current_user
       .col-sm-10.col-sm-offset-1.write-review
         %h3.text-left Write a Review:

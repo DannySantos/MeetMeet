@@ -20,13 +20,13 @@ Given(/^they have some messages$/) do
   @received_message_4 = Message.create!(
     sender_id: @user_2.id,  
     receiver_id: @user_1.id,  
-    body: "Yooooooooo"  
+    body: "Hello"  
   )
   
   @received_message_5 = Message.create!(
     sender_id: @user_2.id,  
     receiver_id: @user_1.id,  
-    body: "Yoooooooooooo"  
+    body: "What are you doing?"  
   )
   
   @sent_message_1 = Message.create!(
@@ -38,7 +38,7 @@ Given(/^they have some messages$/) do
   @sent_message_2 = Message.create!(
     sender_id: @user.id,  
     receiver_id: @user_2.id,  
-    body: "Yooooooooou really need to think of something more creative to write"  
+    body: "Yooou really need to think of something more creative to write"  
   )
 end
 
@@ -64,22 +64,14 @@ Then(/^the message is sent$/) do
 end
 
 Then(/^they see their messages$/) do
-  expect(page).to have_content(@received_message_1.body)
-  expect(page).to have_content(@received_message_2.body)
-  expect(page).to have_content(@received_message_3.body)
-  expect(page).not_to have_content(@received_message_4.body)
-  expect(page).not_to have_content(@received_message_5.body)
+  expect(page).not_to have_css(".message-container p", text: @received_message_1.body)
+  expect(page).not_to have_css(".message-container p", text: @received_message_2.body)
+  expect(page).to have_css(".message-container p", text: @received_message_3.body)
+  expect(page).not_to have_css(".message-container p", text: @received_message_4.body)
+  expect(page).not_to have_css(".message-container p", text: @received_message_5.body)
 end
 
 Then(/^they see their replies$/) do
-  expect(page).to have_content(@sent_message_1.body)
+  expect(page).not_to have_content(@sent_message_1.body)
   expect(page).to have_content(@sent_message_2.body)
-end
-
-Then(/^they see their messages separated by user$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^they see their messages in chronological order$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end

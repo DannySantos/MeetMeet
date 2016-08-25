@@ -9,7 +9,7 @@ class Message < ActiveRecord::Base
     
     loop do
       break if message.replied_to_id.nil?
-      message = Message.find(self.replied_to_id)
+      message = Message.find(message.replied_to_id)
       message_history << message
     end
     
