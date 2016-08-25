@@ -1,6 +1,6 @@
 User.destroy_all
 
-@danny = User.new!(
+@danny = User.new(
   email: "danny@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -10,7 +10,7 @@ User.destroy_all
 @danny.skip_confirmation!
 @danny.save
 
-@lorin = User.new!(
+@lorin = User.new(
   email: "lorin@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -20,7 +20,7 @@ User.destroy_all
 @lorin.skip_confirmation!
 @lorin.save
 
-@tamlyn = User.new!(
+@tamlyn = User.new(
   email: "tamlyn@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -30,7 +30,7 @@ User.destroy_all
 @tamlyn.skip_confirmation!
 @tamlyn.save
 
-@dafin = User.new!(
+@dafin = User.new(
   email: "dafin@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -40,7 +40,7 @@ User.destroy_all
 @dafin.skip_confirmation!
 @dafin.save
 
-@finn = User.new!(
+@finn = User.new(
   email: "finn@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -50,7 +50,7 @@ User.destroy_all
 @finn.skip_confirmation!
 @finn.save
 
-@zareh = User.new!(
+@zareh = User.new(
   email: "zareh@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
@@ -60,7 +60,7 @@ User.destroy_all
 @zareh.skip_confirmation!
 @zareh.save
 
-@aga = User.new!(
+@aga = User.new(
   email: "aga@me.com",
   password: "pppppp",
   password_confirmation: "pppppp",
