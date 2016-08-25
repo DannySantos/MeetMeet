@@ -1,18 +1,20 @@
 .inbox
-  .threads.col-sm-2.col-sm-offset-2
-    - @threads.each do |thread|
-      %a{href: "?sender_id=#{thread.sender_id}"}
-        .thread-container
-          .thumbnail-container{style: "background-image: url(#{thread.sender.profile.image_url})"}
-          .info-container
-            %span= thread.sender.profile.username
-            %br
-            %p= thread.body[0,23] + "..."
-  .message-show.col-sm-6
-    = render @thread_messages
-  .reply.col-sm-6
-    = form_for @message, url: messages_path, method: :post do |f|
-      = f.text_area :body, placeholder: "Write reply"
-      .form-options
-        = f.submit "Send Reply", class: "pull-right"
-        .clearfix
+  .row.h-100
+    .col-sm-8.col-sm-offset-2.inbox-container
+      .threads.col-sm-4
+        - @threads.each do |thread|
+          %a{href: "?sender_id=#{thread.sender_id}"}
+            .thread-container
+              .thumbnail-container{style: "background-image: url(#{thread.sender.profile.image_url})"}
+              .info-container
+                %span= thread.sender.profile.username
+                %br
+                %p= thread.body[0,23] + "..."
+      .message-show.col-sm-8
+        = render @thread_messages
+      .reply.col-sm-8
+        = form_for @message, url: messages_path, method: :post do |f|
+          = f.text_area :body, placeholder: "Write reply"
+          .form-options
+            = f.submit "Send Reply", class: "pull-right"
+            .clearfix

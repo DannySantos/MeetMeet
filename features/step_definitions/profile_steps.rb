@@ -22,6 +22,15 @@ When(/^they fill in the form with username details$/) do
   click_on "Save Changes"
 end
 
+When(/^they fill in the form with cover photo details$/) do
+  fill_in "profile[cover_image_url]", with: "cover.jpg"
+  click_on "Save Changes"
+end
+
+Then(/^their profile should have their cover photo$/) do
+  expect(page).to have_css('.cover[style="background-image: url(cover.jpg)"]')
+end
+
 Then(/^their profile should have their username$/) do
   expect(page).to have_content("Danny")
 end

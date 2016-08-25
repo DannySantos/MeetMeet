@@ -1,7 +1,11 @@
 .inbox {
-  background-color: #0d8278;
+  background-color: #e9ebee;
   height: 100%;
   padding-top: 30px;
+  
+  .inbox-container {
+    height: 100%;
+  }
   
   .threads {
     border-right: 3px solid #eaeaea;

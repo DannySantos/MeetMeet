@@ -2,43 +2,46 @@
   .notice Your message has been sent!
   
 .content-wrapper
+  .col-sm-10.col-sm-offset-1.cover{style: "background-image: url(#{@profile.cover_image_url})"}
   .col-sm-8.col-sm-offset-2.profile
-    .col-sm-10.col-sm-offset-1.profile-info-wrapper
+    .row
       .col-sm-4.profile-sidebar
         = image_tag @profile.image_url || "profile_placeholder"
+        %h2= @profile.username
+        %p= "Location: #{@profile.town_city}, #{@profile.country}"
         - if current_user && @profile.user_id == current_user.id
-          = link_to "Edit Profile", edit_profile_path(@profile.id), class: "btn btn-info form-control"
+          = link_to "Edit Profile", edit_profile_path(@profile.id), class: "btn btn-meet form-control"
 
         - unless current_user && @profile.user_id == current_user.id
           = button_to "send_message", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-default form-control"
 
       .col-sm-8
-        %h2= @profile.username
-        %p= "Location: #{@profile.town_city}, #{@profile.country}"
-        %p= @profile.biography.html_safe if @profile.biography
-          
-      .clearfix
-    
-    .profile-requests
-      %h3= "#{@profile.username} wants to:"
-      - @requests.each do |request|
-        %p= "#{request.activity.name} in #{request.town_city}, #{request.country}"
-      = button_to "Send a message and MeetMeet #{@profile.username}!", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-default message-button"
-      
-    - if current_user
-      .col-sm-10.col-sm-offset-1.write-review
-        %h3.text-left Write a Review:
-        = form_for @review, url: reviews_path, method: "POST", remote: true do |f|
-          = hidden_field_tag "review[reviewer_id]", current_user.profile_id
-          = hidden_field_tag "review[reviewed_id]", @profile.id
-          = f.label :rating, "How would you rate your experience with this user?"
-          = f.select :rating, options_for_select(@rating_options), {}, {class: "form-control"}
-          = f.text_field :title, placeholder: "Summarize your review in a few words", class: "form-control"
-          = f.text_area :body, placeholder: "Tell people about your experience with this user", class: "form-control"
-          = f.submit "Submit Review", class: "form-control btn btn-info"
-    - else
-      = link_to "Log in", new_user_session_path
-      %span to write a review for this user
-    
-    #reviews
-      = render @reviews
+        .col-sm-12
+          .row
+            .profile-info-wrapper
+              %h3= "About #{@profile.username}"
+              %p= @profile.biography.html_safe if @profile.biography
+
+            .profile-requests.profile-info-wrapper
+              %h3= "#{@profile.username} wants to:"
+              - @requests.each do |request|
+                %p.form-control= "#{request.activity.name} in #{request.town_city}, #{request.country}"
+              = button_to "Send a message and MeetMeet #{@profile.username}!", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-meet form-control message-button"
+
+            - if current_user
+              .write-review.profile-info-wrapper
+                %h3.text-left Write a Review:
+                = form_for @review, url: reviews_path, method: "POST", remote: true do |f|
+                  = hidden_field_tag "review[reviewer_id]", current_user.profile_id
+                  = hidden_field_tag "review[reviewed_id]", @profile.id
+                  = f.label :rating, "How would you rate your experience with this user?"
+                  = f.select :rating, options_for_select(@rating_options), {}, {class: "form-control"}
+                  = f.text_field :title, placeholder: "Summarize your review in a few words", class: "form-control"
+                  = f.text_area :body, placeholder: "Tell people about your experience with this user", class: "form-control"
+                  = f.submit "Submit Review", class: "form-control btn btn-meet"
+            - else
+              = link_to "Log in", new_user_session_path
+              %span to write a review for this user
+
+            #reviews
+              = render @reviews
