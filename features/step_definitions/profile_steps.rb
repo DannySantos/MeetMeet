@@ -12,6 +12,15 @@ When(/^they fill in the form with biography details$/) do
   fill_in "profile[biography]", with: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quidem, est obcaecati. Sint libero voluptates quaerat officiis! Consequatur, quos accusantium illo sunt corrupti dolorum sit fugit nulla sapiente, dicta eos!"
 end
 
+When(/^they fill in the form with image URL details$/) do
+  fill_in "profile[image_url]", with: "image.jpg"
+  click_on "Save Changes"
+end
+
+Then(/^their profile should have their image$/) do
+  expect(page).to have_css('img[src="/images/image.jpg"]')
+end
+
 Then(/^their profile should have their location$/) do
   expect(page).to have_content("Location: London, UK")
 end

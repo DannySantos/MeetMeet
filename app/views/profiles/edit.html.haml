@@ -3,6 +3,9 @@
     %h2 Edit Profile
     = form_for @profile do |f|
       %fieldset
+        %h3 Profile Picture
+        = f.text_field :image_url, class: "form-control"
+      %fieldset
         %h3 Biography
         = f.text_area :biography, class: "form-control"
       %fieldset

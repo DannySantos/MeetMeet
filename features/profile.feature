@@ -24,3 +24,9 @@ Feature: Profile
     Given they are on their edit profile page
     When they fill in the form with biography details
     Then their profile should have their biography
+    
+  @wip
+  Scenario: A user adds an image URL to their profile
+    Given they are on their edit profile page
+    When they fill in the form with image URL details
+    Then their profile should have their image
