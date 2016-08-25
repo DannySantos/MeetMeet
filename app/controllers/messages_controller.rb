@@ -21,8 +21,12 @@ class MessagesController < ApplicationController
   end
   
   def create
-    Message.create!(message_params)
-    redirect_to profile_path(params[:message][:receiver_id], sent: "true")
+    @message = Message.create!(message_params)
+    
+    respond_to do |format|
+      format.html { redirect_to profile_path(params[:message][:receiver_id], sent: "true") }
+      format.js #{ render partial: 'messages/message', locals: { message: @message } }
+    end
   end
   
   private
