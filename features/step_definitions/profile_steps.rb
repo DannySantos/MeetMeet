@@ -17,6 +17,15 @@ When(/^they fill in the form with image URL details$/) do
   click_on "Save Changes"
 end
 
+When(/^they fill in the form with username details$/) do
+  fill_in "profile[username]", with: "Danny"
+  click_on "Save Changes"
+end
+
+Then(/^their profile should have their username$/) do
+  expect(page).to have_content("Danny")
+end
+
 Then(/^their profile should have their image$/) do
   expect(page).to have_css('img[src="/images/image.jpg"]')
 end
