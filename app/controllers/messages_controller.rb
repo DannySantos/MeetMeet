@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to profile_path(params[:message][:receiver_id], sent: "true") }
-      format.js #{ render partial: 'messages/message', locals: { message: @message } }
+      format.js
     end
   end
   

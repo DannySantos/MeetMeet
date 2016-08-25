@@ -108,5 +108,5 @@ Given(/^they are on the homepage$/) do
 end
 
 When(/^They click on another user's profile$/) do
-  click_link "1LondonUK"
+  click_link @request_1.profile.username
 end

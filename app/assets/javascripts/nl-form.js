@@ -7,10 +7,12 @@ $(document).ready(function() {
   });
   
   var activitiesSelect = $('#activities-select');
+  var activitiesSelectRequest = $('#request_activity_id');
   var townCityInput = $('#town-city-input');
   var countryInput = $('#country-input');
 
   activitiesSelect.hide();
+  activitiesSelectRequest.hide();
   
   $('.field-toggle').click(toggleInput);
   $('.field-toggle').focus(toggleInput);

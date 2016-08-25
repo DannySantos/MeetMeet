@@ -2,6 +2,10 @@ Given(/^they are on their edit profile page$/) do
   visit edit_profile_path(@user.profile.id)
 end
 
+Given(/^they are on the new request page$/) do
+  visit new_request_path
+end
+
 When(/^they fill in the form with location details$/) do
   fill_in "profile[town_city]", with: "London"
   fill_in "profile[country]", with: "UK"
@@ -25,6 +29,17 @@ end
 When(/^they fill in the form with cover photo details$/) do
   fill_in "profile[cover_image_url]", with: "cover.jpg"
   click_on "Save Changes"
+end
+
+When(/^they fill in the form with request details$/) do
+  select "go fishing", from: "request[activity_id]"
+  fill_in "request[town_city]", with: "Kuala Lumpur"
+  fill_in "request[country]", with: "Malaysia"
+  click_on "Add Request"
+end
+
+Then(/^they should see their new request$/) do
+  expect(page).to have_content("Go Fishing in Kuala Lumpur, Malaysia")
 end
 
 Then(/^their profile should have their cover photo$/) do

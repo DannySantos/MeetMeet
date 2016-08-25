@@ -25,4 +25,30 @@ class RequestsController < ApplicationController
       format.json { render json: @requests.to_json(include: :profile) }
     end
   end
+  
+  def new
+    @request = Request.new
+    @activities = Activity.all.map{ |activity| [activity.name.downcase, activity.id] }
+    @profile = Profile.find(current_user.profile_id)
+    @requests = @profile.requests
+  end
+  
+  def create
+    @request = Request.create!(request_params)
+    
+    respond_to do |format|
+      format.html { redirect_to new_request_path }
+      format.js 
+    end
+  end
+  
+  def show
+    
+  end
+  
+  private
+  
+  def request_params
+    params.require(:request).permit(:profile_id, :activity_id, :town_city, :country)
+  end
 end

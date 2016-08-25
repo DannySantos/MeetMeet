@@ -28,7 +28,11 @@
               %h3= "#{@profile.username} wants to:"
               - @requests.each do |request|
                 %p.form-control= "#{request.activity.name} in #{request.town_city}, #{request.country}"
-              = button_to "Send a message and MeetMeet #{@profile.username}!", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-meet form-control message-button"
+              
+              - if current_user && @profile.user_id == current_user.id
+                = button_to "Add new request", new_request_path, method: :get, class: "btn btn-meet form-control message-button"
+              - else
+                = button_to "Send a message and MeetMeet #{@profile.username}!", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-meet form-control message-button"
 
             - if current_user
               .write-review.profile-info-wrapper

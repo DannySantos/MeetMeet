@@ -39,3 +39,11 @@ Feature: Profile
     Given they are on their edit profile page
     When they fill in the form with cover photo details
     Then their profile should have their cover photo
+    
+  Scenario: A user adds a new request
+    Given there are some profiles
+      And there are some activities
+      And there are some requests
+      And they are on the new request page
+    When they fill in the form with request details
+    Then they should see their new request

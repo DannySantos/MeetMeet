@@ -1,0 +1,40 @@
+.new-request-wrapper
+  .search-box
+    = form_for @request, url: requests_path, method: "post", remote: true do |f|
+      = f.hidden_field :profile_id, value: current_user.id
+
+      I want to
+      .nl-field
+        %a.field-toggle select activity
+        %ul
+          %li select activity...
+          - @activities.each_with_index do |activity, index|
+            %li.select-option(data-id="#{index}")= activity[0]
+        = f.select :activity_id, options_for_select(@activities), class: "inline-select", id: "activities-select"
+
+      in
+      .nl-field
+        %a.field-toggle#town_city{href: ""} enter town/city
+        %ul.text-input
+          %li
+            = f.text_field :town_city, placeholder: "enter town/city", class: "inline-text", id: "town-city-input"
+            .nl-next >
+
+      ,
+      .nl-field
+        %a.field-toggle#country{href: ""} enter country
+        %ul.text-input
+          %li
+            = f.text_field :country, placeholder: "enter country", class: "inline-text", id: "country-input"
+            .nl-next >
+
+      .clearfix
+
+      = submit_tag "Add Request", class: "inline-button"
+
+      .nl-overlay
+
+  #requests.col-sm-6.col-sm-offset-3
+    %h3= "You want to:"
+    - @requests.each do |request|
+      %p.form-control= "#{request.activity.name} in #{request.town_city}, #{request.country}"

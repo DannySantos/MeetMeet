@@ -1,4 +1,4 @@
-.col-sm-8.col-sm-offset-2
+.col-sm-8.col-sm-offset-2.pt-30
   %h2= "Send message to #{@receiver.profile.username}"
   = form_for @message, url: messages_path, method: "POST" do |f|
     = hidden_field_tag "message[sender_id]", current_user.id
