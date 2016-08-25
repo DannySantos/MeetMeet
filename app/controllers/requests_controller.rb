@@ -17,13 +17,12 @@ class RequestsController < ApplicationController
       map_center_lng = params[:search][:mapCenterLng].to_f
 
       distance = Geocoder::Calculations.distance_between([ne_lat,ne_lng], [map_center_lat,map_center_lng])
-      
       @requests = Request.near([map_center_lat, map_center_lng], distance).where(activity_id: params[:search][:activity_id])
     end
     
     respond_to do |format|
       format.html
-      format.json { render json: @requests }
+      format.json { render json: @requests.to_json(include: :profile) }
     end
   end
 end

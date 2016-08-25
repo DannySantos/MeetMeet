@@ -84,13 +84,18 @@ appendResults = function() {
   requestsList.forEach(function(request) {
     $('#search-results').append(
       "<a href=\"/profiles/" + request.request.profile_id + "\">" +
-        "<h3>" + request.request.id + "</h3>" + 
-        "<h3>" + request.request.town_city + "</h3>" + 
-        "<h3>" + request.request.country + "</h3>" + 
-      "</a>" +
-      "<br>"
+        "<div class=\"profile-result\">" +
+          "<div class=\"search-result-image\" style=\"background-image: url(" + request.request.profile.image_url + ")\"></div>" + 
+          "<div class=\"search-result-info\">" +
+            "<span>" + request.request.profile.username + "</span>" +
+            "<p>" + request.request.town_city + ", " + request.request.country + "</p>" +
+          "</div>" + 
+        "<div class=\"clearfix\"></div>" +
+        "</div>" +
+      "</a>"
     );
   })
 };
+
 
 

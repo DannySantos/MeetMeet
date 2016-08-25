@@ -2,7 +2,9 @@
   .notice Your message has been sent!
   
 .content-wrapper
-  .col-sm-10.col-sm-offset-1.cover{style: "background-image: url(#{@profile.cover_image_url})"}
+  .col-sm-8.col-sm-offset-2
+    .row
+      .col-sm-12.cover{style: "background-image: url(#{@profile.cover_image_url})"}
   .col-sm-8.col-sm-offset-2.profile
     .row
       .col-sm-4.profile-sidebar
@@ -15,7 +17,7 @@
         - unless current_user && @profile.user_id == current_user.id
           = button_to "send_message", new_message_path, method: :get, params: { receiver_id: @profile.user.id}, class: "btn btn-default form-control"
 
-      .col-sm-8
+      .col-sm-8.pr-0
         .col-sm-12
           .row
             .profile-info-wrapper

@@ -52,49 +52,56 @@ User.destroy_all
   username: "Danny",
   town_city: "Leeds",
   country: "UK",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13221521_10154218242649521_858764480537345491_n.jpg?oh=0e931681496f1f4a2bb089c23309a891&oe=58122A27"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13221521_10154218242649521_858764480537345491_n.jpg?oh=0e931681496f1f4a2bb089c23309a891&oe=58122A27",
+  cover_image_url: "https://scontent-lhr3-1.xx.fbcdn.net/t31.0-8/1658606_10152248437619521_968206448_o.jpg"
 })
 
 @lorin.profile.update({
   username: "Lorin",
   town_city: "Arizona",
   country: "USA",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/40223_417626366667_7939549_n.jpg?oh=1b7f095fef161b412510a44cb090eba1&oe=5810DE04"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/40223_417626366667_7939549_n.jpg?oh=1b7f095fef161b412510a44cb090eba1&oe=5810DE04",
+  cover_image_url: "http://www.incimages.com/uploaded_files/image/1940x900/software-computer-code-1940x900_35196.jpg"
 })
 
 @tamlyn.profile.update({
   username: "Tamlyn",
   town_city: "Toowoomba",
   country: "Australia",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/t31.0-8/10548227_1511296389116588_8956871852082766858_o.jpg"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/t31.0-8/10548227_1511296389116588_8956871852082766858_o.jpg",
+  cover_image_url: "http://honisoit.com/wp-content/uploads/2013/08/729592-australian-protectionist-party.jpg"
 })
 
 @dafin.profile.update({
   username: "Dafin",
   town_city: "London",
   country: "UK",
-  image_url: "https://avatars3.githubusercontent.com/u/2958639?v=3&s=400"
+  image_url: "https://avatars3.githubusercontent.com/u/2958639?v=3&s=400",
+  cover_image_url: "https://s-media-cache-ak0.pinimg.com/736x/07/07/69/0707695a30645c67356dcdefd6c96aa6.jpg"
 })
 
 @finn.profile.update({
   username: "Finn",
   town_city: "Llaneli",
   country: "Wales",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/1229903_10151901640200844_1776194532_n.jpg?oh=95ab76e64b579cc450669d8ee078cef2&oe=5841BAE0"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/1229903_10151901640200844_1776194532_n.jpg?oh=95ab76e64b579cc450669d8ee078cef2&oe=5841BAE0",
+  cover_image_url: "http://normferns.com/blog/wp-content/uploads/2015/02/shaun-the-black-sheep.png"
 })
 
 @zareh.profile.update({
   username: "Zareh",
   town_city: "Cambridge",
   country: "UK",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/10848053_1562547573990663_8711429173938075156_n.jpg?oh=ecddc3885a13f6123abf1a9843e9ae00&oe=58494F31"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/10848053_1562547573990663_8711429173938075156_n.jpg?oh=ecddc3885a13f6123abf1a9843e9ae00&oe=58494F31",
+  cover_image_url: "http://1.bp.blogspot.com/-bqY0Ll9F8HA/UlQ31vnZPzI/AAAAAAAAHNA/FR0q2QzwD-A/s1600/Texas%20line%20dance.jpg"
 })
 
 @aga.profile.update({
   username: "Aga",
   town_city: "Krakow",
   country: "Poland",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/11407081_1145579952125458_8781056563014680658_n.jpg?oh=0a6b04526ad756753d6446969cf1ee94&oe=583F2C4F"
+  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/11407081_1145579952125458_8781056563014680658_n.jpg?oh=0a6b04526ad756753d6446969cf1ee94&oe=583F2C4F",
+  cover_image_url: "http://cdn-media-1.lifehack.org/wp-content/files/2013/09/jwj-slackline-0041.jpg"
 })
 
 
