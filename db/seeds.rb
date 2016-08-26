@@ -86,7 +86,7 @@ Message.destroy_all
   username: "Danny",
   town_city: "Leeds",
   country: "UK",
-  image_url: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13221521_10154218242649521_858764480537345491_n.jpg?oh=0e931681496f1f4a2bb089c23309a891&oe=58122A27",
+  image_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAQ_AAAAJDRkMWZiM2RlLWVhMWYtNGY5OS05MjgxLTU2ZGQ4NTEzYmY1Mg.jpg",
   cover_image_url: "https://scontent-lhr3-1.xx.fbcdn.net/t31.0-8/1658606_10152248437619521_968206448_o.jpg",
   biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 })
