@@ -621,7 +621,7 @@ Review.find_or_create_by(
   title: "What a dancer!",
   body: "In all my years of line dancing I've never seen anything quite so elegant. 10/5 stars.",
   reviewed_id: @danny.id,
-  reviewer_id: @dafin.id
+  reviewer_id: @zareh.id
 )
 
 Review.find_or_create_by(
@@ -637,7 +637,7 @@ Review.find_or_create_by(
   title: "I'm Speechless",
   body: "The best non-sheep I know by quite a margin",
   reviewed_id: @danny.id,
-  reviewer_id: @aga.id
+  reviewer_id: @finn.id
 )
 
 

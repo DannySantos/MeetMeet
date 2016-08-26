@@ -1,5 +1,6 @@
 .review-container.profile-info-wrapper
   .col-sm-3
+    - binding.pry
     = image_tag review.reviewer.profile.image_url || "profile_placeholder", class: "reviewer-profile"
   .review-body.col-sm-9
     %h3= review.title
