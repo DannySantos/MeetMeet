@@ -1,4 +1,10 @@
 User.destroy_all
+Request.destroy_all
+Review.destroy_all
+Profile.destroy_all
+Activity.destroy_all
+Message.destroy_all
+
 
 @danny = User.new(
   email: "danny@me.com",
