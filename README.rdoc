@@ -1,28 +1,40 @@
-== README
+= MeetMeet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MeetMeet is an app that aims to connect people for the purposes of sharing activities in specific location. It can be summarised by the search term that powers it:
 
-Things you may want to cover:
+I want to <select activity> in <enter location>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It was a solo project completed in two 5 day sprints as final project for We Got Coders
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Stats
+
+* 100% Test Coverage
+* 1:1 Code to Test Ratio
+* 153 LOC
+
+
+== Technologies Used
+
+* Rails 4.2.7
+* Postgresql
+* HAML
+* SASS
+* Cucumber
+* RSpec
+* Devise
+* Sphinx
+* Geocoder
+* Foreman
+* Google Maps JavaScript API
+* Bootstrap
+* jQuery
+
+
+== Links
+
+The app:
+https://meetmeet.herokuapp.com/
+
+Pivotal Tracker:
+https://www.pivotaltracker.com/n/projects/1786453

@@ -20,4 +20,4 @@ RSpec.describe Request, type: :model do
       expect(request.longitude).to eq(-0.1277583)
     end
   end
-end
+  end
